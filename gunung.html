@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paket Pendakian - Gunung Explore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #eee;
+      line-height: 1.6;
+    }
+    header, footer {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+      color: #00ffcc;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      margin-bottom: 30px;
+      color: #00ffcc;
+      text-align: center;
+      animation: fadeInDown 1s ease forwards;
+    }
+    .grid-paket {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .paket-card {
+      background: #222;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .paket-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 255, 204, 0.5);
+    }
+    .paket-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+    .paket-content {
+      padding: 15px 20px;
+    }
+    .paket-content h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #00ffcc;
+    }
+    .paket-content p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+    }
+    .paket-card:nth-child(1) { animation-delay: 0.1s; }
+    .paket-card:nth-child(2) { animation-delay: 0.3s; }
+    .paket-card:nth-child(3) { animation-delay: 0.5s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-content {
+      background-color: #222;
+      border-radius: 15px;
+      padding: 25px;
+      max-width: 500px;
+      width: 100%;
+      color: #00ffcc;
+      box-shadow: 0 0 15px #00ffcc;
+      position: relative;
+      animation: modalFadeIn 0.3s ease forwards;
+    }
+    @keyframes modalFadeIn {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      font-size: 24px;
+      color: #00ffcc;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .modal-close:hover {
+      color: #66fff0;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    .modal-content ul {
+      list-style: inside disc;
+      color: #c0fff7;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Paket Pendakian</h1>
+  </header>
+
+  <div class="container">
+    <div class="grid-paket">
+      <div class="paket-card" data-name="merapi">
+        <img src="assets/merapi.jpg" alt="Gunung Merapi" class="paket-image" />
+        <div class="paket-content">
+          <h3>Gunung Merapi</h3>
+          <p><strong>Lokasi:</strong> Jawa Tengah</p>
+          <p><strong>Tinggi:</strong> 2,930 m</p>
+          <p><strong>Estimasi Waktu:</strong> 2 hari</p>
+          <p><strong>Biaya Paket:</strong> Rp 900.000</p>
+        </div>
+      </div>
+
+      <div class="paket-card" data-name="merbabu">
+        <img src="assets/merbabu.jpg" alt="Gunung Merbabu" class="paket-image" />
+        <div class="paket-content">
+          <h3>Gunung Merbabu</h3>
+          <p><strong>Lokasi:</strong> Jawa Tengah</p>
+          <p><strong>Tinggi:</strong> 3,145 m</p>
+          <p><strong>Estimasi Waktu:</strong> 2 hari</p>
+          <p><strong>Biaya Paket:</strong> Rp 900.000</p>
+        </div>
+      </div>
+
+      <div class="paket-card" data-name="semeru">
+        <img src="assets/semeru.jpg" alt="Gunung Semeru" class="paket-image" />
+        <div class="paket-content">
+          <h3>Gunung Semeru</h3>
+          <p><strong>Lokasi:</strong> Jawa Timur</p>
+          <p><strong>Tinggi:</strong> 3,676 m</p>
+          <p><strong>Estimasi Waktu:</strong> 3-4 hari</p>
+          <p><strong>Biaya Paket:</strong> Rp 1.500.000</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <div class="modal-content">
+      <span class="modal-close" id="modalClose" aria-label="Close modal">&times;</span>
+      <h2 id="modalTitle">Fasilitas Paket</h2>
+      <div id="modalDesc">
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin: 40px 0;">
+  <a href="index.html" style="
+    background-color: #00ffcc;
+    color: #000;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  " onmouseover="this.style.backgroundColor='#00ddaa'" onmouseout="this.style.backgroundColor='#00ffcc'">
+    ⬅ Kembali ke Beranda
+  </a>
+</div>
+
+  <footer>
+    <p>&copy; 2025 Gunung Explore</p>
+  </footer>
+
+  <script>
+    const paketFasilitas = {
+      merapi: [
+        "Pendamping pemandu profesional",
+        "Tenda dan perlengkapan camping",
+        "Makan 3x selama pendakian",
+        "Peralatan keselamatan",
+        "Transportasi antar-jemput"
+      ],
+      merbabu: [
+        "Pendamping pemandu berpengalaman",
+        "Tenda 2 orang per tenda",
+        "Makan 3x lengkap",
+        "Alat navigasi dan komunikasi",
+        "Asuransi pendakian"
+      ],
+      semeru: [
+        "Pemandu senior dan porter",
+        "Perlengkapan camping lengkap",
+        "Makan 4x selama pendakian",
+        "Izin resmi pendakian",
+        "Transportasi dan asuransi"
+      ]
+    };
+
+    const modal = document.getElementById('modal');
+    const modalClose = document.getElementById('modalClose');
+    const modalDesc = document.getElementById('modalDesc');
+
+    function openModal(gunung) {
+      const fasilitas = paketFasilitas[gunung];
+      if(!fasilitas) return;
+
+      modalDesc.innerHTML = "<ul>" + fasilitas.map(item => `<li>${item}</li>`).join("") + "</ul>";
+      modal.style.display = "flex";
+      document.body.style.overflow = 'hidden'; 
+    }
+    function closeModal() {
+      modal.style.display = "none";
+      document.body.style.overflow = ''; 
+    }
+
+    document.querySelectorAll('.paket-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const gunung = card.getAttribute('data-name');
+        openModal(gunung);
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+
+    window.addEventListener('click', (e) => {
+      if(e.target === modal) {
+        closeModal();
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if(e.key === "Escape" && modal.style.display === "flex") {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>

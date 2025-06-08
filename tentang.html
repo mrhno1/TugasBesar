@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami - Gunung Explore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #f1f1f1;
+      line-height: 1.8;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+    }
+
+    h1, h2, h3 {
+      color: #00ffcc;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.member {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member:hover {
+  transform: translateY(0) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 255, 204, 0.4);
+}
+
+#backButton {
+  background-color: #00ffcc;
+  border: none;
+  color: #111;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#backButton:hover {
+  background-color: #00cc99;
+}
+
+.member:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.member:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.member:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.member:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    .member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 2px solid #00ffcc;
+    }
+
+    .member h4 {
+      color: #00ffcc;
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tentang Kami</h1>
+  </header>
+
+  <div class="container">
+    <section class="section">
+      <h2>Sejarah Gunung Explore</h2>
+      <p>Gunung Explore berdiri sejak tahun 2020 dengan tujuan menghubungkan para pecinta alam dan memberikan pengalaman mendaki yang aman, menyenangkan, dan penuh edukasi. Kami percaya bahwa pendakian bukan hanya tentang mencapai puncak, tetapi tentang menghargai setiap langkah perjalanan dan menjaga alam yang kita lintasi.</p>
+    </section>
+
+    <section class="section">
+      <h2>Tim Pemandu</h2>
+      <div class="team">
+        <div class="member">
+          <img src="assets/andi.jpg" alt="Andi Pratama">
+          <h4>Andi Pratama</h4>
+          <p>10 tahun pengalaman mendaki di lebih dari 30 gunung di Indonesia. Spesialis survival dan rescue.</p>
+        </div>
+        <div class="member">
+          <img src="assets/sari.jpg" alt="Sari Widya">
+          <h4>Sari Widya</h4>
+          <p>Instruktur pendakian bersertifikat dengan latar belakang biologi. Ahli dalam edukasi flora dan fauna gunung.</p>
+        </div>
+        <div class="member">
+          <img src="assets/budi.jpg" alt="Budi Santoso">
+          <h4>Budi Santoso</h4>
+          <p>Pendaki senior dengan pengalaman ekspedisi internasional. Ahli navigasi dan perlengkapan outdoor.</p>
+        </div>
+        <div class="member">
+          <img src="assets/lina.jpg" alt="Lina Kurnia">
+          <h4>Lina Kurnia</h4>
+          <p>Pemandu profesional yang fokus pada keselamatan dan kenyamanan pendaki pemula. Ramah dan penuh semangat.</p>
+        </div>
+        <div class="member">
+          <img src="1.jpg" alt="Lina Kurnia">
+          <h4>Lina Kurnia</h4>
+          <p>Pemandu profesional yang fokus pada keselamatan dan kenyamanan pendaki pemula. Ramah dan penuh semangat.</p>
+        </div>
+        <div class="member">
+          <img src="assets/lina.jpg" alt="Lina Kurnia">
+          <h4>Lina Kurnia</h4>
+          <p>Pemandu profesional yang fokus pada keselamatan dan kenyamanan pendaki pemula. Ramah dan penuh semangat.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Visi dan Misi</h2>
+      <p><strong>Visi:</strong> Menjadi penyedia layanan pendakian terbaik yang mengedepankan keselamatan, kenyamanan, dan kelestarian alam.</p>
+      <p><strong>Misi:</strong></p>
+      <ul>
+        <li>Membekali pendaki dengan pengetahuan dan persiapan matang.</li>
+        <li>Menjaga ekosistem gunung dengan edukasi dan aksi nyata.</li>
+        <li>Memberikan pengalaman mendaki yang berkesan dan aman.</li>
+      </ul>
+    </section>
+    <div style="text-align: center; margin-top: 30px;">
+    <button id="backButton">Kembali</button>
+  </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Gunung Explore</p>
+  </footer>
+  <script>
+  document.getElementById('backButton').addEventListener('click', function() {
+    window.history.back();
+  });
+</script>
+</body>
+</html>
